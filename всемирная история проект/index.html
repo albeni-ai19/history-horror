@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исторический Хоррор — Проект Колледжа</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-overlay">
+            <h1 class="main-title">Биографии великих и известных людей</h1>
+            
+            <div class="cards-container">
+                <a href="elizabeth.html" class="person-card">
+                    <div class="image-wrapper">
+                        <img src="Queen_Elizabeth_II_of_New_Zealand_(cropped).jpg" alt="Елизавета II">
+                    </div>
+                    <div class="card-footer">Елизавета II</div>
+                </a>
+
+                <a href="tarantino.html" class="person-card">
+                    <div class="image-wrapper">
+                        <img src="347647729041945.webp" alt="Квентин Тарантино">
+                    </div>
+                    <div class="card-footer">Квентин Тарантино</div>
+                </a>
+
+                <a href="curie.html" class="person-card">
+                    <div class="image-wrapper">
+                        <img src="330px-Marie_Curie_(1900)_(cropped).jpg" alt="Мари Кюри">
+                    </div>
+                    <div class="card-footer">Мари Кюри</div>
+                </a>
+
+                <a href="jackson.html" class="person-card">
+                    <div class="image-wrapper">
+                        <img src="Dzhekson-Maykl.jpg" alt="Майкл Джексон">
+                    </div>
+                    <div class="card-footer">Майкл Джексон</div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <section class="about-section">
+            <h2>О нашем проекте по Всемирной Истории</h2>
+            <hr class="separator">
+            <p>
+                Добро пожаловать! Мы — студенты колледжа ASTANA POLYTECHNIC, <strong>группа П-25-75Б</strong>. В качестве практического проекта по всемирной истории мы решили соединить классическую игровую механику культового хоррора <em>Five Nights at Freddy's </em> и биографии великих исторических личностей.
+            </p>
+        </section>
+
+        <section class="gameplay-section">
+            <h2>Кто преследует вас в темноте?</h2>
+            <hr class="separator">
+            
+            <div class="game-characters">
+                <div class="char-box">
+                    <h3>Елизавета II</h3>
+                    <p>Действует утонченно и монархически. Двигается медленно, но если дойдет до дверей — пощады не будет.</p>
+                </div>
+                <div class="char-box">
+                    <h3>Квентин Тарантино</h3>
+                    <p>Непредсказуемый гений режиссуры. Может внезапно ускоряться и обожает кинематографичные скримеры.</p>
+                </div>
+                <div class="char-box">
+                    <h3>Мари Кюри</h3>
+                    <p>Излучает чистую энергию. Будьте осторожны с приборами — её появление может вызывать помехи на камерах.</p>
+                </div>
+                <div class="char-box">
+                    <h3>Майкл Джексон</h3>
+                    <p>Король поп-музыки перемещается по коридорам стремительно, используя лунную походку, и атакует под фирменный крик.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2>Наша Команда «Керамбитики»</h2>
+            <hr class="separator">
+            
+            <div class="team-grid">
+                
+                <div class="team-member">
+                    <img src="file_000000009d3872088d45766bd918ac90.png" alt="Ильясовета II" class="member-photo zoomable">
+                    <h4>Ильясовета II</h4>
+                </div>
+
+                <div class="team-member">
+                    <img src="file_00000000e8bc7208bf6ad14a89693786.png" alt="Квентин Елисентино" class="member-photo zoomable">
+                    <h4>Квентин Елисентино</h4>
+                </div>
+
+                <div class="team-member">
+                    <img src="1779563354678.png" alt="Бакыт Кюри" class="member-photo zoomable">
+                    <h4>Бакыт Кюри</h4>
+                </div>
+
+                <div class="team-member">
+                    <img src="1779563960060.png" alt="Аянтино Джексон" class="member-photo zoomable">
+                    <h4>Аянтино Джексон</h4>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
+
+    <footer class="site-footer">
+        <p>© 2026 krg09 и act04 | Команда «Керамбитики». Все права под защитой durex.</p>
+    </footer>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const fullImg = document.getElementById("fullImage");
+        const closeBtn = document.querySelector(".modal-close");
+
+        // Находим все фотки с классом zoomable и вешаем клик
+        document.querySelectorAll('.zoomable').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                fullImg.src = this.src;
+            });
+        });
+
+        // Закрытие окна при клике на крестик или мимо фото
+        closeBtn.onclick = () => modal.style.display = "none";
+        modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; }
+    </script>
+
+</body>
+</html>
